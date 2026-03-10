@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   EcoBac AI — Global Styles
+   ============================================================ */
+
+:root {
+  --scrollbar-width: 6px;
+  --scrollbar-track: #111114;
+  --scrollbar-thumb: #2a2a34;
+  --scrollbar-thumb-hover: #3a3a48;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0d0d0f;
+  color: #e5e5ea;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Selection */
+::selection {
+  background: rgba(86, 115, 250, 0.3);
+  color: #fff;
+}
+
+/* Smooth focus rings */
+*:focus-visible {
+  outline: 2px solid rgba(86, 115, 250, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Textarea reset */
+textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+/* Message content styling */
+.message-content {
+  line-height: 1.75;
+  font-size: 0.9375rem;
+}
+
+.message-content h1,
+.message-content h2,
+.message-content h3 {
+  font-weight: 600;
+  margin: 1em 0 0.4em;
+  color: #f0f0f5;
+}
+
+.message-content h1 { font-size: 1.15em; }
+.message-content h2 { font-size: 1.05em; }
+.message-content h3 { font-size: 0.975em; color: #c8c8d4; }
+
+.message-content p {
+  margin: 0.5em 0;
+}
+
+.message-content ul,
+.message-content ol {
+  padding-left: 1.4em;
+  margin: 0.4em 0;
+}
+
+.message-content li {
+  margin: 0.25em 0;
+}
+
+.message-content strong {
+  color: #e8e8f0;
+  font-weight: 600;
+}
+
+.message-content em {
+  color: #b8b8c8;
+  font-style: italic;
+}
+
+.message-content code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+  color: #a8d8ff;
+}
+
+.message-content pre {
+  background: #0a0a0f;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75em 0;
+}
+
+.message-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875em;
+  color: #c8e8ff;
+}
+
+.message-content blockquote {
+  border-left: 3px solid rgba(86,115,250,0.6);
+  padding-left: 1rem;
+  margin: 0.5em 0;
+  color: #a0a0b8;
+  font-style: italic;
+}
+
+.message-content hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 1em 0;
+}
+
+/* Typing dots animation */
+.typing-dot {
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulseDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Glass panel utility */
+.glass {
+  background: rgba(22, 22, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.glass-light {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7690ff 0%, #5773fa 50%, #a78bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sidebar transition */
+.sidebar-enter {
+  transform: translateX(-100%);
+}
+.sidebar-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
